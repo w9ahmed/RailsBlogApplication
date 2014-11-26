@@ -8,7 +8,8 @@
 
 
 user = User.create(
-	:email => 'mary@example.com',
+	:email => 'marlyn@example.com',
+	:password => 'secret',
 	:password => 'secret')
 
 Category.create([
@@ -17,3 +18,18 @@ Category.create([
 	{:name => 'Travel'},
 	{:name => 'Music'},
 	{:name => 'TV'}])
+
+user.articles.create(
+	:title => 'Advanced Active Record',
+	:body => 'Models need to relate to each other in the real world.',
+	:published_at => Date.today)
+
+user.articles.create(
+	:title => 'One to many associations',
+	:body => 'One to many associations describe a pattern',
+	:published_at => Date.today)
+
+user.articles.create(
+	:title => 'Associations',
+	:body => 'Active Record makes working with associations easy.',
+	:published_at => Date.today)
