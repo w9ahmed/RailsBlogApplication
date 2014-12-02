@@ -4,7 +4,12 @@ Blog::Application.routes.draw do
     resources :comments
   end
   resources :users
-  resources :session
+  
+  resource :session, :only => [:new, :create, :destroy]
+  # Define two named routes, login_path and logout_path
+  # which are more meaningful than new_session_path and session_path
+  get '/login' => "sessions#new", :as => "login"
+  get '/logout' => "sessions#destroy", :as => "logout"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
