@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate, except: [:index, :show]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  # before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show]
 
   # GET /articles
   # GET /articles.json
