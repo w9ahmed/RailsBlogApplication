@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate, except: [:index, :show]
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
-  # Check what's wrong here!
   before_action :set_article, only: [:show]
 
   # GET /articles
