@@ -35,7 +35,7 @@ pre {
 
 p { padding: 5px; }
 
-a {
+a, a:visited {
 	color: #d95e16;
 	padding: 0 2px;
 	text-decoration: none;
@@ -105,10 +105,7 @@ a:hover {
 
 #main table { margin: 0; }
 
-#main form {
-	display: none;
-	float: left;
-}
+#main form { text-align: left; }
 
 #main form br {
 	display: none;
@@ -118,7 +115,7 @@ a:hover {
 #main form label {
 	width: 150px;
 	display: block;
-	text-align: right;
+	text-align: center;
 	padding-right: 10px;
 	float: left;
 	line-height: 21px;
