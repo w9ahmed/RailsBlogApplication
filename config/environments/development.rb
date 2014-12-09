@@ -1,4 +1,4 @@
-Rails.application.configure do
+Blog::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -15,6 +15,16 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+
+  # Gmail SMTP server setup
+  ActionMailer::Base.smtp_settings = {
+    address: "smtp.gmail.com",
+    enable_starttls_auto: true,
+    port: 587,
+    authentication: :plain,
+    user_name: "dev.horus@gmail.com",
+    password: "horusdeveloper"
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

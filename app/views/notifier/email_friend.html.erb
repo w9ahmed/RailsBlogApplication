@@ -1,0 +1,6 @@
+<h1>Your friend <%= @sender_name %> thinks you may like the following article:</h1>
+<h3>
+<%= link_to @article.title, article_url(@article, host: "localhost:3000") %>
+</h3>
+
+<%= simple_format @article.body %>

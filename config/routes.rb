@@ -1,11 +1,14 @@
 Blog::Application.routes.draw do
   root :to => 'articles#index'
   resources :articles do
+    member do
+      post :notify_friend
+    end
     resources :comments
   end
   resources :users
   
-  resource :session, :only => [:new, :create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
   # Define two named routes, login_path and logout_path
   # which are more meaningful than new_session_path and session_path
   get '/login' => "sessions#new", :as => "login"
