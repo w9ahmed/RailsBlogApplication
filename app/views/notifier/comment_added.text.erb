@@ -1,0 +1,3 @@
+<%= @comment.name %> added a comment to one of your articles <%= @article.title %>
+"<%= @comment.body %>"
+Go read the comment: <%= article_url(@article, host: 'localhost:3000') %>

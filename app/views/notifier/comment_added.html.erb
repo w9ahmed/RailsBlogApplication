@@ -1,0 +1,7 @@
+<html>
+<body>
+	<p><strong><%= @comment.name %></strong> added a comment to one of your articles <i><%= @article.title %></i>.</p>
+	<blockquote><p><%= @comment.body %></p></blockquote>
+	<p>Go read the comment: <%= link_to @article.title, article_url(@article, host: 'localhost:3000') %>.</p>
+</body>
+</html>
