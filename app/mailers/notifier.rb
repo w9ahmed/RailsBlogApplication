@@ -11,6 +11,7 @@ class Notifier < ActionMailer::Base
     @sender_name = sender_name
     @receiver_email = receiver_email
 
+    attachments["logo_rubyonrails.png"] = File.read(Rails.root.join("public/rubyonrails.png"))
     mail to: receiver_email, subject: "#{@article.title}"
   end
 end
