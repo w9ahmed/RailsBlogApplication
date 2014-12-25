@@ -11,4 +11,11 @@ class ArticleTest < ActiveSupport::TestCase
   	assert article.save
   end
 
+  test "should find article" do
+  	article_id = articles(:welcome_to_rails).id
+  	assert_nothing_raised {
+  		Article.find(article_id)
+  	}
+  end
+
 end
