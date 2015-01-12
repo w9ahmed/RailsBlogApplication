@@ -11,7 +11,7 @@
 
 	<header>
 		<h1><%= link_to "Blog", root_path %></h1>
-		<nav id="user_bar">
+		<nav>
 			<% if logged_in? %>
 				<%= link_to "New Article", new_article_path %>
 				<%= link_to "Edit Password", edit_user_path(current_user) %>
@@ -22,16 +22,16 @@
 		</nav>
 	</header>
 
-<div id="main">
-	<%= content_tag(:p, notice, class:'notice') if notice.present? %>	
-	<%= content_tag(:p, alert, class:'alert') if alert.present? %>
-	<%= yield %>	
-</div>
+	<main>
+		<%= content_tag(:p, notice, class:'notice') if notice.present? %>	
+		<%= content_tag(:p, alert, class:'alert') if alert.present? %>
+		<%= yield %>	
+	</main>
 
-<div id="footer">
-	A simple blog built for the book
-	<a href="http://beginningrails.com">Beginning Rails 4</a>
-</div>
+	<footer>
+		A simple blog built for the book
+		<a href="http://beginningrails.com">Beginning Rails 4</a>
+	</footer>
 
 </body>
 </html>
