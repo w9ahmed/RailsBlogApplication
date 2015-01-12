@@ -14,10 +14,25 @@
  *= require_self
  */
 
-* { margin: 0 auto;}
+/* ***** COLORS ***** */
+$header_color: #2980b9;
+$main_bg_color: #ecf0f1;
+/* ***** ****** ***** */
+
+/* ***** MIXINS ***** */
+@mixin fill_absolute() {
+	left: 0;
+	right: 0;
+}
+
+@mixin top_fill_absolute() {
+	top: 0;
+	@include fill_absolute();
+}
+/* ***** ****** ***** */
 
 body {
-	background-color: #fff;
+	background-color: $main_bg_color;
 	color: #333;
 }
 
@@ -25,6 +40,22 @@ body, p, ol, ul, td {
 	font-family: verdana, arial, helvetica, sans-serif;
 	font-size: 13px;
 	line-height: 18px;
+}
+
+header {
+	top: 0;
+	height: 30px;
+	padding: 10px 50px;
+	@include top_fill_absolute();
+	background-color: $header_color;
+
+	h1 {
+		margin: 0;
+	}
+
+	nav {
+		float: right;
+	}
 }
 
 pre {
