@@ -134,6 +134,26 @@ main {
 		}
 
 	}
+
+	form {
+		padding: 10px;
+		margin: 15px;
+
+		.actions {
+			a, button {
+				text-decoration: none;
+				padding: 5px 10px;
+				border-radius: 25px;
+				border: 1px solid #e74c3c;
+				transition: background-color 250ms linear;
+
+				&:hover {
+					color: white;
+					background-color: #e74c3c;
+				}
+			}
+		}
+	}
 }
 
 footer {
